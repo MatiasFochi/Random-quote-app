@@ -15,7 +15,7 @@ const citas = [
   ["Errar en el camino propio es mejor que acertar en el camino de alguien más.", "Fiódor Dostoyevsky"],
   ["Desleal es aquel que se despide cuando el camino se oscurece.", "J.R.R. Tolkien"],
   ["La gente enojada no siempre es sabia.", "Jane Austen"],
-  ["El fracaso es el condimento que le da sabor al éxito.", "Truman Capote"]
+  ["El fracaso es el condimento que le da sabor al éxito.", "Truman Capote"],
 ];
 
 function App() {
