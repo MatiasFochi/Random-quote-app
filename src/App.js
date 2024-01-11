@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const citas = [
   ["La vida es lo que pasa mientras estás ocupado haciendo otros planes.", "John Lennon"],
@@ -53,16 +53,15 @@ function App() {
 
   /* FUNCION DE CITA */
   //Funcion que maneja el cambio de cita
-  const funcionNuevaCita = () => {
+  const funcionNuevaCita = useCallback(() => {
     let nuevaCita = Math.floor((Math.random() * ((citas.length-1) - 0 + 1) + 0)); //Mantiene la forma de la formula de numeros aleatorios Math.floor((Math.random() * ((max) - min + 1) + min))
     setCitaIndex(nuevaCita);
-    setCitaPantalla(citas[citaIndex]);
-  };
+    setCitaPantalla(citas[citaIndex]);}, [citaIndex]);
 
   /* FUNCION LINK TWITTER */
 
   //Funcion que genera el link para tuitear
-  function linkTwitter() {
+  const linkTwitter = useCallback(() => {
     let citaALink = '';
     let soloCita = citaPantalla[0];
     let soloAutor = citaPantalla[1];
@@ -84,7 +83,7 @@ function App() {
       }
     }
     return irATwittear+citaALink;
-  };
+  }, [citaPantalla, irATwittear]);
 
   /* FUNCION DE BOTON */
 
@@ -122,7 +121,7 @@ function App() {
       }, 10);
       return () => clearInterval(intervalId);
     }
-  }, [startAnimation, decreasing]);
+  }, [startAnimation, decreasing, funcionNuevaCita, linkTwitter]);
 
   
   return (
