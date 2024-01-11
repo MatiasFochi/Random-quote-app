@@ -154,7 +154,7 @@ function App() {
         </div>
         <div className='footer' style={{background: colorAleatorio, color:(demasiadoClaro) ? 'black' : 'white', transition: 'background 2s, color 2s'}}>
           by 
-          <a href='https://github.com/MatiasFochi' target='_blank' rel='noreferrer' style={{color:(demasiadoClaro) ? 'black' : 'white', transition: 'color 2s'}} > MatiasFochi</a>
+          <a href='https://www.linkedin.com/in/matias-fochi/' target='_blank' rel='noreferrer' style={{color:(demasiadoClaro) ? 'black' : 'white', transition: 'color 2s'}} > MatiasFochi</a>
         </div>
       </div>
     </div>
@@ -163,11 +163,3 @@ function App() {
 
 export default App;
 
-
-/* FUNCIONES */
-
-/*
-
-
-
-*/
