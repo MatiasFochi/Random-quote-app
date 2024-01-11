@@ -8,6 +8,14 @@ const citas = [
   ["El fracaso es simplemente la oportunidad de comenzar de nuevo, esta vez de forma más inteligente.", "Henry Ford"],
   ["La mejor manera de predecir el futuro es inventándolo.", "Alan Kay"],
   ["Menos la madre de uno, todas ingratas.","Matias Fochi"],
+  ["Tener conocimientos no es suficiente, debemos aplicarlos. Desear no es suficiente, debemos actuar.", "Johann Wolfgang von Goethe"],
+  ["Las heridas que no se ven son las más profundas.", "William Shakespeare"],
+  ["No hables a menos que puedas mejorar el silencio.", "Jorge Luis Borges"],
+  ["Los lenguajes no son más que una pobre traducción.", "Franz Kafka"],
+  ["Errar en el camino propio es mejor que acertar en el camino de alguien más.", "Fiódor Dostoyevsky"],
+  ["Desleal es aquel que se despide cuando el camino se oscurece.", "J.R.R. Tolkien"],
+  ["La gente enojada no siempre es sabia.", "Jane Austen"],
+  ["El fracaso es el condimento que le da sabor al éxito.", "Truman Capote"]
 ];
 
 function App() {
