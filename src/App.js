@@ -28,7 +28,7 @@ function App() {
   
   //Sincronizar
   //La cita y autor que trabaja el algoritmo
-  const [citaIndex, setCitaIndex] = useState(0);
+  const [citaIndex, setCitaIndex] = useState(Math.floor((Math.random() * ((citas.length-1) - 0 + 1) + 0)));
   //La cita y autor que se muestran en pantalla, no lo que opera en las funciones
   const [citaPantalla, setCitaPantalla] = useState(["Empecemos!","Haz click en el boton 'New Quote'"]);
   const [botonDesactivado, setBotonDesactivado] = useState(false);
