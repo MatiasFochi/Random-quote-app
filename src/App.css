@@ -6,15 +6,13 @@
 }
 
 body {
-  background-color: #333;
-  color: #333;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   width: 100vw;
+  min-height: 100vh;
 }
 
 
@@ -22,22 +20,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   width: 100vw;
+  min-height: 100vh;
 }
 
-
-div {
-  position: relative;
-  z-index: 2;
+.Contenedor-general{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#wrapper{
-  position: relative;
-  z-index: 2;
+.Contenedor-logo{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
 }
 
-#quote-box{
+.LogoMF{
+  height: 40px;
+  width: 45px;
+} 
+
+#Contenedor-frase{
   border-radius: 10px;
   position: relative;
   width: 450px;
@@ -46,7 +51,7 @@ div {
   background-color: #FFF;
 }
 
-.quote-text{
+.Texto-cita{
   text-align: center;
   width: 450px;
   height: auto;
@@ -55,12 +60,12 @@ div {
   font-size: 1.75em;
 }
 
-.quote-text i{
+.Texto-cita i{
   font-size: 1em;
   margin-right: 0.4em;
 }
 
-.quote-author{
+.Autor-cita{
   width: 450px;
   height: auto;
   clear: both;
@@ -69,26 +74,25 @@ div {
   text-align: right;
 }
 
-#quote-box .buttons{
+#Contenedor-frase .Botones{
   width: 450px;
   margin: auto;
   display: block;
 }
 
-#quote-box .buttons .button{
+#Contenedor-frase .Botones .Boton{
   height: 38px;
   border: none;
   border-radius: 3px;
-  background-color: #333;
   outline: none;
   font-size: 0.85em;
-  padding: 8px 18px 6px 18px;
+  padding: 0 18px;
   margin-top: 30px;
   opacity: 1;
   cursor: pointer;
 }
 
-#quote-box .buttons .button#tweet-quote{
+#Contenedor-frase .Botones .Boton#tweet-cita{
   float: left;
   padding: 0px;
   padding-top: 8px;
@@ -99,7 +103,7 @@ div {
   width: 40px;
 }
 
-#quote-box .buttons .button#newQuote {
+#Contenedor-frase .Botones .Boton#nuevaFrase {
   float: right;
 }
 
@@ -116,3 +120,134 @@ div {
   text-decoration: none;
 }
 
+/*----------BREAKPOINTS----------*/
+
+
+/* Pantallas Tablets */
+@media only screen and (min-width: 486px) and (max-width: 610px){
+
+  #Contenedor-frase{
+    padding: 20px 10px;
+  }
+
+
+  .Texto-cita{
+    font-size: 1.3em;
+  }
+  
+  .Texto-cita i{
+    font-size: 1em;
+  }
+  
+  .Autor-cita{
+    width: 436px;
+    font-size: 0.8em;
+  }
+  
+  #Contenedor-frase .Botones{
+    width: 436px;
+  }
+}
+
+/* Pantallas Tablets pequeñas */
+@media only screen and (min-width: 413px) and (max-width: 486px){
+
+  #Contenedor-general {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #Contenedor-frase {
+    width: 385px;
+    padding: 20px 0;
+    text-align: center;
+    display: grid;
+    justify-items: center;
+  }
+
+  #Contenedor-frase .Botones{
+    display: flex;
+    width: 335px;
+    justify-content: space-between;
+  }
+
+  .Texto-cita,
+  .Autor-cita,
+  .footer{
+    width: 90%;
+  }
+
+  .Texto-cita{
+    font-size: 1.3em;
+  }
+  
+  .Texto-cita i{
+    font-size: 1em;
+  }
+  
+  .Autor-cita{
+    font-size: 1em;
+  }
+  
+  .footer{
+    margin: 20px 0;
+  }
+
+}
+
+/* Pantallas Telefonos */
+@media only screen and (max-width: 413px){
+
+  .App {
+    align-items: stretch;
+}
+
+  #Contenedor-general {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  #Contenedor-frase {
+    width: 95%;
+    padding: 20px 0;
+    text-align: center;
+    display: grid;
+    justify-items: center;
+  }
+
+  #Contenedor-frase .Botones{
+    display: flex;
+    width: 335px;
+    justify-content: space-between;
+  }
+
+  .Texto-cita,
+  .Autor-cita,
+  .footer{
+    width: 90%;
+  }
+
+  .Texto-cita{
+    font-size: 1.3em;
+  }
+  
+  .Texto-cita i{
+    font-size: 1em;
+  }
+  
+  .Autor-cita{
+    font-size: 1em;
+  }
+  
+  .footer{
+    margin: 20px 0;
+  }
+
+
+
+}

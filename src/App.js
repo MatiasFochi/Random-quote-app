@@ -1,5 +1,7 @@
 import './App.css';
 import { useState, useEffect, useCallback } from 'react';
+import LogoClaro from './Logos/LogoPersonalBlanco2.png';
+import LogoOscuro from './Logos/LogoPersonal2.png';
 
 const citas = [
   ["La vida es lo que pasa mientras estás ocupado haciendo otros planes.", "John Lennon"],
@@ -7,7 +9,6 @@ const citas = [
   ["El éxito no es la clave de la felicidad. La felicidad es la clave del éxito.", "Albert Schweitzer"],
   ["El fracaso es simplemente la oportunidad de comenzar de nuevo, esta vez de forma más inteligente.", "Henry Ford"],
   ["La mejor manera de predecir el futuro es inventándolo.", "Alan Kay"],
-  ["Menos la madre de uno, todas ingratas.","Matias Fochi"],
   ["Tener conocimientos no es suficiente, debemos aplicarlos. Desear no es suficiente, debemos actuar.", "Johann Wolfgang von Goethe"],
   ["Las heridas que no se ven son las más profundas.", "William Shakespeare"],
   ["No hables a menos que puedas mejorar el silencio.", "Jorge Luis Borges"],
@@ -25,6 +26,7 @@ function App() {
   //Asincronicos
   const [colorAleatorio, setColorAleatorio] = useState('rgb(93, 18, 146)');
   const [demasiadoClaro, setDemasiadoClaro] = useState(false);
+  const [colorLogoClaro, setColorLogoClaro] = useState(true);
   
   //Sincronizar
   //La cita y autor que trabaja el algoritmo
@@ -114,6 +116,12 @@ function App() {
               setDecreasing(false);
               funcionNuevaCita();
               linkTwitter();
+              if(demasiadoClaro){
+                setColorLogoClaro(false);
+              }
+              else{
+                setColorLogoClaro(true);
+              }
             }
           } else {
             nextOpacidad = prevOpacidad + 0.01;
@@ -129,27 +137,32 @@ function App() {
       }, 10);
       return () => clearInterval(intervalId);
     }
-  }, [startAnimation, decreasing, funcionNuevaCita, linkTwitter]);
+  }, [startAnimation, decreasing, demasiadoClaro, funcionNuevaCita, linkTwitter]);
 
   
   return (
     <div className='App' style={{background: colorAleatorio, color: colorAleatorio, transition: 'background 2s, color 2s'}}>
-      <div id='wrapper'>
-        <div id='quote-box' style={{background: (demasiadoClaro) ? 'black' : 'white', transition: 'background 2s'}} >
-          <div className='quote-text' style={{opacity: opacidad}} >
+      <div id='Contenedor-general'>
+        <div className='Contenedor-logo'>
+          <a href='https://www.linkedin.com/in/matias-fochi/' target='_blank' rel='noreferrer' >
+            <img className='LogoMF' src={(colorLogoClaro) ? LogoClaro : LogoOscuro} style={{opacity: opacidad}} alt='Logo Matias Fochi'/>
+          </a>
+        </div>
+        <div id='Contenedor-frase' style={{background: (demasiadoClaro) ? 'black' : 'white', transition: 'background 2s'}} >
+          <div className='Texto-cita' style={{opacity: opacidad}} >
           <i className="bi-quote"></i>
             <span id='text' >{citaPantalla[0]}</span>
           </div>
-          <div className='quote-author' style={{opacity: opacidad}} >
+          <div className='Autor-cita' style={{opacity: opacidad}} >
             {"- "} 
             <span id='author'>{citaPantalla[1]}</span>
           </div>
-          <div className='buttons'>
-            <a className='button' id='tweet-quote' title='Tweet this quote!' target='_top' 
+          <div className='Botones'>
+            <a className='Boton' id='tweet-cita' title='Twittea esta frase!' target='_top' 
             href={linkTwitter()} style={{background: colorAleatorio, color:(demasiadoClaro) ? 'black' : 'white', transition: 'background 2s, color 2s'}} hidden={(citaPantalla[0] === "Empecemos!") ? true : false}>
               <i className='bi-twitter'></i>
             </a>
-            <button className='button' id='newQuote' onClick={manejarClik} style={{background: colorAleatorio, color:(demasiadoClaro) ? 'black' : 'white' , transition: 'background 2s, color 2s'}} disabled={botonDesactivado} >New quote</button>
+            <button className='Boton' id='nuevaFrase' onClick={manejarClik} style={{background: colorAleatorio, color:(demasiadoClaro) ? 'black' : 'white' , transition: 'background 2s, color 2s'}} disabled={botonDesactivado} >Nueva Frase</button>
           </div>
         </div>
         <div className='footer' style={{background: colorAleatorio, color:(demasiadoClaro) ? 'black' : 'white', transition: 'background 2s, color 2s'}}>
