@@ -26,13 +26,13 @@ function App() {
   //Asincronicos
   const [colorAleatorio, setColorAleatorio] = useState('rgb(93, 18, 146)');
   const [demasiadoClaro, setDemasiadoClaro] = useState(false);
-  const [colorLogoClaro, setColorLogoClaro] = useState(true);
+  
   
   //Sincronizar
   //La cita y autor que trabaja el algoritmo
   const [citaIndex, setCitaIndex] = useState(Math.floor((Math.random() * ((citas.length-1) - 0 + 1) + 0)));
   //La cita y autor que se muestran en pantalla, no lo que opera en las funciones
-  const [citaPantalla, setCitaPantalla] = useState(["Empecemos!","Haz click en el boton 'New Quote'"]);
+  const [citaPantalla, setCitaPantalla] = useState(["Bienvenido!","Haz click en el boton 'Nueva Frase'"]);
   const [botonDesactivado, setBotonDesactivado] = useState(false);
   const [opacidad, setOpacidad] = useState(1);
   const [decreasing, setDecreasing] = useState(true);
@@ -116,12 +116,6 @@ function App() {
               setDecreasing(false);
               funcionNuevaCita();
               linkTwitter();
-              if(demasiadoClaro){
-                setColorLogoClaro(false);
-              }
-              else{
-                setColorLogoClaro(true);
-              }
             }
           } else {
             nextOpacidad = prevOpacidad + 0.01;
@@ -137,15 +131,16 @@ function App() {
       }, 10);
       return () => clearInterval(intervalId);
     }
-  }, [startAnimation, decreasing, demasiadoClaro, funcionNuevaCita, linkTwitter]);
+  }, [startAnimation, decreasing, funcionNuevaCita, linkTwitter]);
 
   
   return (
     <div className='App' style={{background: colorAleatorio, color: colorAleatorio, transition: 'background 2s, color 2s'}}>
       <div id='Contenedor-general'>
         <div className='Contenedor-logo'>
-          <a href='https://www.linkedin.com/in/matias-fochi/' target='_blank' rel='noreferrer' >
-            <img className='LogoMF' src={(colorLogoClaro) ? LogoClaro : LogoOscuro} style={{opacity: opacidad}} alt='Logo Matias Fochi'/>
+          <a className='Contenedor-logo-2' href='https://www.linkedin.com/in/matias-fochi/' target='_blank' rel='noreferrer' >
+            <img className='LogoMF' src={LogoClaro} style={{opacity: demasiadoClaro ? 0 : 1, transition: 'opacity 2s'}} alt='Logo Matias Fochi'/>
+            <img className='LogoMF' src={LogoOscuro} style={{opacity: demasiadoClaro ? 1 : 0, transition: 'opacity 2s'}} alt='Logo Matias Fochi'/>
           </a>
         </div>
         <div id='Contenedor-frase' style={{background: (demasiadoClaro) ? 'black' : 'white', transition: 'background 2s'}} >
@@ -176,3 +171,4 @@ function App() {
 
 export default App;
 
+//<img className='LogoMF' src={(colorLogoClaro) ? LogoClaro : LogoOscuro} style={{opacity: opacidad}} alt='Logo Matias Fochi'/>

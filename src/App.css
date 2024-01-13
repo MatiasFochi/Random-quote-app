@@ -35,12 +35,36 @@ body {
   display: flex;
   justify-content: center;
   margin: 10px 0;
+  position: relative;
+}
+
+.Contenedor-logo{
+  height: 55px;
+  width: 550px;
+}
+
+.Contenedor-logo-2{
+  height: 55px;
+  width: 60px;
+}
+
+.LogoMF{
+  height: 55px;
+  width: 60px;
+  position: absolute;
+}
+
+
+/* .Contenedor-logo{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
 }
 
 .LogoMF{
   height: 40px;
   width: 45px;
-} 
+}  */
 
 #Contenedor-frase{
   border-radius: 10px;
@@ -126,6 +150,17 @@ body {
 /* Pantallas Tablets */
 @media only screen and (min-width: 486px) and (max-width: 610px){
 
+
+  .Contenedor-logo{
+    height: 55px;
+    width: 470px;
+  }
+  
+  .Contenedor-logo-2{
+    height: 55px;
+    width: 60px;
+  }
+
   #Contenedor-frase{
     padding: 20px 10px;
   }
@@ -171,6 +206,21 @@ body {
     display: flex;
     width: 335px;
     justify-content: space-between;
+  }
+
+  .Contenedor-logo{
+    height: 40px;
+    width: 385px;
+  }
+  
+  .Contenedor-logo-2{
+    height: 40px;
+    width: 45px;
+  }
+
+  .LogoMF{
+    height: 40px;
+    width: 45px;
   }
 
   .Texto-cita,
@@ -224,6 +274,21 @@ body {
     display: flex;
     width: 335px;
     justify-content: space-between;
+  }
+
+  .Contenedor-logo{
+    height: 40px;
+    width: 384px;
+  }
+  
+  .Contenedor-logo-2{
+    height: 40px;
+    width: 45px;
+  }
+
+  .LogoMF{
+    height: 40px;
+    width: 45px;
   }
 
   .Texto-cita,
