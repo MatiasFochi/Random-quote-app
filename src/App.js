@@ -135,15 +135,15 @@ function App() {
 
   
   return (
-    <div className='App' style={{background: colorAleatorio, color: colorAleatorio, transition: 'background 2s, color 2s'}}>
+    <div className='App' style={{background: colorAleatorio, color: colorAleatorio}}>
       <div id='Contenedor-general'>
         <div className='Contenedor-logo'>
           <a className='Contenedor-logo-2' href='https://www.linkedin.com/in/matias-fochi/' target='_blank' rel='noreferrer' >
-            <img className='LogoMF' src={LogoClaro} style={{opacity: demasiadoClaro ? 0 : 1, transition: 'opacity 2s'}} alt='Logo Matias Fochi'/>
-            <img className='LogoMF' src={LogoOscuro} style={{opacity: demasiadoClaro ? 1 : 0, transition: 'opacity 2s'}} alt='Logo Matias Fochi'/>
+            <img className='LogoMF' src={LogoClaro} style={{opacity: demasiadoClaro ? 0 : 1}} alt='Logo Matias Fochi'/>
+            <img className='LogoMF' src={LogoOscuro} style={{opacity: demasiadoClaro ? 1 : 0}} alt='Logo Matias Fochi'/>
           </a>
         </div>
-        <div id='Contenedor-frase' style={{background: (demasiadoClaro) ? 'black' : 'white', transition: 'background 2s'}} >
+        <div id='Contenedor-frase' style={{background: (demasiadoClaro) ? 'black' : 'white'}} >
           <div className='Texto-cita' style={{opacity: opacidad}} >
           <i className="bi-quote"></i>
             <span id='text' >{citaPantalla[0]}</span>
@@ -154,15 +154,15 @@ function App() {
           </div>
           <div className='Botones'>
             <a className='Boton' id='tweet-cita' title='Twittea esta frase!' target='_top' 
-            href={linkTwitter()} style={{background: colorAleatorio, color:(demasiadoClaro) ? 'black' : 'white', transition: 'background 2s, color 2s'}} hidden={(citaPantalla[0] === "Empecemos!") ? true : false}>
+            href={linkTwitter()} style={{background: colorAleatorio, color:(demasiadoClaro) ? 'black' : 'white'}} hidden={(citaPantalla[0] === "Empecemos!") ? true : false}>
               <i className='bi-twitter'></i>
             </a>
-            <button className='Boton' id='nuevaFrase' onClick={manejarClik} style={{background: colorAleatorio, color:(demasiadoClaro) ? 'black' : 'white' , transition: 'background 2s, color 2s'}} disabled={botonDesactivado} >Nueva Frase</button>
+            <button className='Boton' id='nuevaFrase' onClick={manejarClik} style={{background: colorAleatorio, color:(demasiadoClaro) ? 'black' : 'white'}} disabled={botonDesactivado} >Nueva Frase</button>
           </div>
         </div>
-        <div className='footer' style={{background: colorAleatorio, color:(demasiadoClaro) ? 'black' : 'white', transition: 'background 2s, color 2s'}}>
+        <div className='footer' style={{background: colorAleatorio, color:(demasiadoClaro) ? 'black' : 'white'}}>
           by 
-          <a href='https://www.linkedin.com/in/matias-fochi/' target='_blank' rel='noreferrer' style={{color:(demasiadoClaro) ? 'black' : 'white', transition: 'color 2s'}} > MatiasFochi</a>
+          <a href='https://www.linkedin.com/in/matias-fochi/' target='_blank' rel='noreferrer' style={{color:(demasiadoClaro) ? 'black' : 'white'}} > MatiasFochi</a>
         </div>
       </div>
     </div>

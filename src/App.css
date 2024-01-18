@@ -22,6 +22,7 @@ body {
   align-items: center;
   width: 100vw;
   min-height: 100vh;
+  transition: background-color 2s ease, color 2s ease;
 }
 
 .Contenedor-general{
@@ -52,19 +53,8 @@ body {
   height: 55px;
   width: 60px;
   position: absolute;
+  transition: opacity 1s ease;
 }
-
-
-/* .Contenedor-logo{
-  display: flex;
-  justify-content: center;
-  margin: 10px 0;
-}
-
-.LogoMF{
-  height: 40px;
-  width: 45px;
-}  */
 
 #Contenedor-frase{
   border-radius: 10px;
@@ -73,6 +63,7 @@ body {
   padding: 40px 50px;
   display: table;
   background-color: #FFF;
+  transition: background-color 2s ease;
 }
 
 .Texto-cita{
@@ -114,6 +105,7 @@ body {
   margin-top: 30px;
   opacity: 1;
   cursor: pointer;
+  transition: background-color 2s ease, color 2s ease;
 }
 
 #Contenedor-frase .Botones .Boton#tweet-cita{
@@ -137,11 +129,13 @@ body {
   display: block;
   margin: 15px auto 30px auto;
   font-size: 0.8em;
+  transition: background-color 2s ease, color 2s ease;
 }
 
 .footer a {
   font-weight: 500;
   text-decoration: none;
+  transition: color 2s ease;
 }
 
 /*----------BREAKPOINTS----------*/
