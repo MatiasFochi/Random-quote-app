@@ -1,7 +1,7 @@
 import './App.css';
 import { useState, useEffect, useCallback } from 'react';
 import LogoClaro from './Logos/LogoPersonalBlanco2.png';
-import LogoOscuro from './Logos/LogoPersonal2.png';
+import LogoOscuro from './Logos/LogoPersonal.png';
 
 const citas = [
   ["La vida es lo que pasa mientras estás ocupado haciendo otros planes.", "John Lennon"],
